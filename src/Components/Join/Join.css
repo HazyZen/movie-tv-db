@@ -1,0 +1,44 @@
+.joinall_container {
+  width: 100%;
+  background-image: url("/public/joinbg.jpg");
+  color: white;
+  padding: 30px 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.heading {
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.join_content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.join_para {
+  font-size: 17px;
+  width: 45%;
+}
+
+.join_list {
+  font-size: 15px;
+  width: 50%;
+  opacity: 0.8;
+}
+
+em {
+  opacity: 0.8;
+}
+
+.sign_btn {
+  margin-top: 30px;
+  background-color: purple;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}

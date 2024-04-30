@@ -1,0 +1,95 @@
+.slick-slider {
+}
+.slick-next::before {
+  font-size: 25px !important;
+  line-height: 0 !important;
+  z-index: 2 !important;
+  color: rgb(108, 107, 107) !important;
+}
+
+.slick-prev::before {
+  font-size: 25px !important;
+  line-height: 0 !important;
+  z-index: 2 !important;
+  color: rgb(108, 107, 107) !important;
+}
+
+.slick-slide {
+  width: 300px !important;
+  margin-right: 20px;
+}
+
+.slick-list {
+  width: 680px !important;
+  height: 300px !important;
+  margin: 10px 20px !important;
+  border-radius: 5px;
+  padding-left: 5px !important;
+}
+
+.slick-track {
+  width: 680px !important;
+  padding: 10px;
+  display: flex;
+}
+
+ul.slick-dots {
+  bottom: 20px !important;
+}
+
+/* .slick-dots li button::before {
+  color: rgb(0, 0, 0) !important;
+} */
+
+/* Tablet screen size */
+@media only screen and (min-width: 601px) and (max-width: 880px) {
+  .slick-list {
+    width: 420px !important;
+    height: 280px !important;
+  }
+
+  ul.slick-dots {
+    bottom: 40px !important;
+  }
+}
+
+/* Mobile screen size */
+@media only screen and (min-width: 481px) and (max-width: 600px) {
+  .slick-list {
+    width: 280px !important;
+    height: 250px !important;
+    padding-left: 5px !important;
+  }
+
+  ul.slick-dots {
+    bottom: 10px !important;
+  }
+
+  .slick-next::before {
+    position: absolute;
+    right: 11px;
+  }
+
+  .slick-prev::before {
+    position: absolute;
+    left: 8px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .slick-list {
+    width: 140px !important;
+    height: 220px !important;
+    padding-left: 5px !important;
+  }
+
+  .slick-next::before {
+    position: absolute;
+    right: 10px;
+  }
+
+  .slick-prev::before {
+    position: absolute;
+    left: 8px;
+  }
+}

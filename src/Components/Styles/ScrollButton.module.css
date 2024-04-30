@@ -1,0 +1,35 @@
+.button {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  font-size: 50px;
+  z-index: 1;
+  cursor: pointer;
+  color: rgb(168, 117, 249);
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+  box-shadow: 0 0 3px white;
+  background-color: rgb(237, 237, 237);
+  color: rgb(102, 41, 201);
+  transform: translateY(-4px);
+}
+
+/* Tablet screen size */
+@media only screen and (min-width: 601px) and (max-width: 880px) {
+  .button {
+    font-size: 40px;
+    right: 30px;
+  }
+}
+
+/* Mobile screen size */
+@media only screen and (max-width: 600px) {
+  .button {
+    font-size: 30px;
+    right: 30px;
+  }
+}

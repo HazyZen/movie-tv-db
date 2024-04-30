@@ -1,0 +1,27 @@
+.formContainer {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.type {
+  width: 190px;
+}
+
+.dayWeek {
+  width: 130px;
+}
+
+/* Tablet screen size */
+@media only screen and (min-width: 601px) and (max-width: 880px) {
+}
+
+/* Mobile screen size */
+@media only screen and (max-width: 600px) {
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
