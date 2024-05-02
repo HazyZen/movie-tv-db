@@ -130,11 +130,11 @@ export default function Trending({ setId }) {
     if (movieActive) {
       setOnDayFocus(true);
       trendingMovieDay();
-      trendingHeaderRef.current.textContent = "Trending Movies - Day";
+      trendingHeaderRef.current.textContent = "Movies - Day";
     } else {
       setOnDayFocus(true);
       trendingTvDay();
-      trendingHeaderRef.current.textContent = "Trending Shows - Day";
+      trendingHeaderRef.current.textContent = "TV Shows - Day";
     }
   }
 
@@ -142,11 +142,11 @@ export default function Trending({ setId }) {
     if (movieActive) {
       setOnDayFocus(false);
       trendingMovieWeek();
-      trendingHeaderRef.current.textContent = "Trending Movies - Week";
+      trendingHeaderRef.current.textContent = "Movies - Week";
     } else {
       setOnDayFocus(false);
       trendingTvWeek();
-      trendingHeaderRef.current.textContent = "Trending Shows - Week";
+      trendingHeaderRef.current.textContent = "TV Shows - Week";
     }
   }
 
@@ -155,10 +155,10 @@ export default function Trending({ setId }) {
     setTvActive(false);
     if (onDayFocus) {
       trendingMovieDay();
-      trendingHeaderRef.current.textContent = "Trending Movies - Day";
+      trendingHeaderRef.current.textContent = "Movies - Day";
     } else {
       trendingMovieWeek();
-      trendingHeaderRef.current.textContent = "Trending Movies - Week";
+      trendingHeaderRef.current.textContent = "Movies - Week";
     }
   }
 
@@ -167,10 +167,10 @@ export default function Trending({ setId }) {
     setTvActive(true);
     if (onDayFocus) {
       trendingTvDay();
-      trendingHeaderRef.current.textContent = "Trending Shows - Day";
+      trendingHeaderRef.current.textContent = "TV Shows - Day";
     } else {
       trendingTvWeek();
-      trendingHeaderRef.current.textContent = "Trending Shows - Week";
+      trendingHeaderRef.current.textContent = "TV Shows - Week";
     }
   }
 
@@ -225,9 +225,22 @@ export default function Trending({ setId }) {
         <h1>Welcome</h1>
         <p>Millions of Movies and TV Shows to discover. Explore now.</p>
       </div>
-      <div className={styles.wrapper} style={{ color: "black" }}>
+      <div className={styles.wrapper}>
         <div className={styles.top}>
-          <h2 ref={trendingHeaderRef}>Trending Movies - Day</h2>
+          <h2>
+            TRENDING
+            <br />{" "}
+            <span
+              style={{
+                fontWeight: "500",
+                fontSize: "16px",
+                color: "rgba(0,0,0,.7)",
+              }}
+              ref={trendingHeaderRef}
+            >
+              Movies - Day
+            </span>
+          </h2>
 
           <SelectMovieTv
             className={styles.selectClass}
