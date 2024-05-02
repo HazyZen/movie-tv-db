@@ -10,7 +10,7 @@ import ShowGenre from "./Components/TvShow/ShowGenre.jsx";
 import Watchlist from "./Components/Watchlist.jsx";
 import Protected from "./Components/routes/Protected.jsx";
 import Signuppage from "./Components/Signuppage/Signuppage.js";
-import Search from "./Components/Search.jsx";
+import Search from "./Components/Search/Search.jsx";
 
 function App() {
   return (

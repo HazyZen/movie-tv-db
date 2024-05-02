@@ -5,7 +5,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Styles/TrendingSlick.css";
-import { Skeleton } from "@mui/material";
 import SelectMovieTv from "./SelectMovieTv";
 import Badge from "@mui/material/Badge";
 
@@ -240,31 +239,8 @@ export default function Trending({ setId }) {
         </div>
 
         {loading ? (
-          <div className={styles.skeletonDiv}>
-            <Skeleton
-              variant="rounded"
-              width={150}
-              height={220}
-              sx={{ bgcolor: "grey.900" }}
-            />
-            <Skeleton
-              variant="rounded"
-              width={150}
-              height={220}
-              sx={{ bgcolor: "grey.900" }}
-            />
-            <Skeleton
-              variant="rounded"
-              width={150}
-              height={220}
-              sx={{ bgcolor: "grey.900" }}
-            />
-            <Skeleton
-              variant="rounded"
-              width={150}
-              height={220}
-              sx={{ bgcolor: "grey.900" }}
-            />
+          <div className={styles.LoadingDiv}>
+            <div className={styles.loader}></div>
           </div>
         ) : (
           <div className={styles.sliderContainer}>

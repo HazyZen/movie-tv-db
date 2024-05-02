@@ -86,6 +86,7 @@ export default function ShowDiscover() {
   return (
     <>
       <h2 className={styles.header}>Popular Shows</h2>
+
       <div className={styles.container}>
         {loading && !data.results ? (
           <Loading />

@@ -4,15 +4,30 @@
   margin: 0;
 }
 
-/* ===== Skeleton ===== */
-.skeletonDiv {
+/* ===== Loading ===== */
+.LoadingDiv {
   width: 100%;
   height: 220px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   gap: 20px;
   margin-top: 20px;
+}
+
+.loader {
+  width: 60px;
+  aspect-ratio: 6;
+  background: radial-gradient(circle closest-side, #000 90%, #0000) 0 /
+    calc(100% / 3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1s steps(4) infinite;
+}
+
+@keyframes l1 {
+  to {
+    clip-path: inset(0 -34% 0 0);
+  }
 }
 
 /* ===== Trending Container ===== */

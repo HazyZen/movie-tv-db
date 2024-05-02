@@ -5,7 +5,7 @@
   background-size: 1400px;
   background-repeat: no-repeat;
   background-image: url("/public/bg.png");
-  background-color: white;
+  background-color: #f3eeee;
 }
 
 .link {
@@ -27,7 +27,7 @@
 
 .button_container {
   background: white;
-  border: 1.2px solid black;
+  border: none;
   margin: auto 2rem;
   border-radius: 18px;
 }
@@ -40,11 +40,12 @@
   border-radius: 18px;
   font-size: 18px;
   cursor: pointer;
+  height: 32px;
 }
 
 .active {
-  background-color: #032541 !important;
-  color: #78ebbe;
+  background-color: #762ab2 !important;
+  color: #5bdff9;
 }
 
 .card_container {

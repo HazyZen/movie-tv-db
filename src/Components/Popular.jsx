@@ -161,7 +161,7 @@ const Popular = () => {
         </div>
       </div>
       {loading ? (
-        <div className={styles.skeletonDiv}>
+        <div className={styles.LoadingDiv}>
           <div className={styles.loader}></div>
         </div>
       ) : (

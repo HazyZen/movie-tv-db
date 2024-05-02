@@ -24,15 +24,14 @@
   justify-content: flex-start;
   outline: 2px solid #c28dedaf;
   border-radius: 8px;
-  background-color: rgb(43, 40, 40); /* #aa53f1af */
+  transition: all 0.3s ease-in-out;
+  background-color: rgb(43, 40, 40);
   animation: scaleIn 0.5s linear both;
-  /* transition: transform 0.3s ease-in-out; */
 }
 
 .movieContainer:hover {
   outline: 2px solid rgb(191, 0, 255);
   box-shadow: 0px 0px 15px rgb(207, 67, 250);
-  /* transform: scale(1.1, 1.1); */
 }
 
 .textContent {
@@ -84,7 +83,7 @@
 
 @keyframes scaleIn {
   0% {
-    transform: scale(0, 0);
+    transform: scale(0.1);
     opacity: 0;
   }
   100% {

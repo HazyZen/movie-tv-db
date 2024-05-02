@@ -1,7 +1,8 @@
 .trailerall_container {
   width: 100%;
   padding: 20px 60px;
-  background-image: url(https://www.themoviedb.org/assets/2/awards-preview/oscars-2024-backdrop-694a7f6f9e04874b2b38829977f5b7abd8dd9264227404407ad6aa37e8afeb84.png);
+  background-color: #f3eeee;
+  /* background-image: url(https://www.themoviedb.org/assets/2/awards-preview/oscars-2024-backdrop-694a7f6f9e04874b2b38829977f5b7abd8dd9264227404407ad6aa37e8afeb84.png); */
 }
 
 .trailer_heading_container {
@@ -9,18 +10,21 @@
   align-items: center;
   margin: 20px auto;
 }
+
 .trailer_text {
   font-size: 1.5rem;
-  font-weight: 500;
-  color: white;
+  font-weight: 600;
+  color: black;
 }
+
 .trailer_button_container {
   background: transparent;
   display: flex;
   margin: auto 2rem;
-  border: 1px solid rgb(26, 207, 138);
+  border: none;
   border-radius: 18px;
 }
+
 .trailer_button_container button {
   border: none;
   outline: none;
@@ -30,32 +34,41 @@
   border-radius: 18px;
   font-size: 18px;
   font-weight: 500;
-  color: white !important;
   cursor: pointer;
+  color: black;
+  background-color: transparent;
 }
+
 .trailer_button_container button.active {
-  background-color: rgb(26, 207, 138);
-  color: #032541;
+  background-color: #762ab2 !important;
+  color: #5bdff9;
   margin: 0;
 }
+
 .trailer_card_container {
-  padding: 5px;
+  padding: 5px 15px;
   display: flex;
+  align-items: center;
   overflow-x: auto;
   scrollbar-width: thin; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
+  height: 300px;
+  gap: 20px;
 }
 
 .trailer_movie_card {
-  flex: 0 0 300px; /* Set a fixed width for each card */
-  margin-right: 20px; /* Add some margin between cards */
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 300px;
 }
+
 .trailer_img_container {
   width: 100%;
   position: relative;
 }
+
 .trailer_title {
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   margin-top: 10px;
   font-size: 15px;
@@ -63,23 +76,27 @@
   cursor: pointer;
   transition: all 0.5s ease;
 }
+
 .trailer_title:hover {
   color: #26c98a;
 }
+
 .trailer_img {
   width: 360px;
   height: 210px;
   border: 1px solid;
   border-radius: 8px;
 }
+
 .trailer_img_container {
   transform: scale(1, 1);
   transition: all 0.2s ease-out;
   border-radius: 8px;
 }
+
 .trailer_img_container:hover {
-  transform: scale(1.08, 1.08);
-  border-radius: 8px;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {
@@ -99,6 +116,7 @@
     flex-direction: column;
   }
 }
+
 .trailer_modal {
   position: fixed;
   top: 0;
@@ -122,6 +140,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .trailer_modal_close {
   position: absolute;
   top: 10px;
@@ -133,8 +152,9 @@
 }
 
 .trailer_modal_iframe {
-  width: 0%;
+  width: 100%;
   height: 100%;
+  border: none;
 }
 
 .trailer_play_button {

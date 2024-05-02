@@ -1,13 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import styles from "./Styles/Search.module.css";
-import defaultPoster from "./Images/defaultPoster.jpg";
+import styles from "../Styles/Search.module.css";
+import defaultPoster from "../Images/defaultPoster.jpg";
 import { Link } from "react-router-dom";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { Badge } from "@mui/material";
-// import TextField from "@mui/material/TextField";
-// import Autocomplete from "@mui/material/Autocomplete";
-// import Pagination from "@mui/material/Pagination";
-// import Stack from "@mui/material/Stack";
+import { RiArrowLeftDoubleFill, RiArrowRightDoubleFill } from "react-icons/ri";
 
 const token = `${process.env.REACT_APP_TOKEN}`;
 
@@ -17,7 +14,6 @@ const Search = () => {
   const [type, setType] = useState("movie");
   const [userInput, setUserInput] = useState("");
   const [page, setPage] = useState(1);
-  const infoRef = useRef();
 
   useEffect(() => {
     multiSearch(page, type);
@@ -81,6 +77,24 @@ const Search = () => {
     });
   }
 
+  function handleToFirstPage(e) {
+    e.preventDefault();
+    setPage(1);
+    window.scrollTo({
+      top: 100,
+      behavior: "smooth",
+    });
+  }
+
+  function handleToLastPage(e) {
+    e.preventDefault();
+    setPage(result.total_pages);
+    window.scrollTo({
+      top: 100,
+      behavior: "smooth",
+    });
+  }
+
   function handleMoviesTab(e) {
     setType("movie");
     setPage(1);
@@ -93,14 +107,12 @@ const Search = () => {
     multiSearch(1, type);
   }
 
-  function handleEnterPoster() {
-    infoRef.current.style.opacity = 1;
-    infoRef.current.style.display = "block";
+  function handleEnterPoster(e) {
+    e.currentTarget.style.opacity = 1;
   }
 
-  function handleLeavePoster() {
-    infoRef.current.style.opacity = 0;
-    infoRef.current.style.display = "none";
+  function handleLeavePoster(e) {
+    e.currentTarget.style.opacity = 0;
   }
 
   return (
@@ -149,11 +161,7 @@ const Search = () => {
                       badgeContent={Math.round(el.vote_average * 10) / 10}
                       color={el.vote_average > 7 ? "secondary" : "primary"}
                     >
-                      <div
-                        className={styles.posterContainer}
-                        onMouseEnter={handleEnterPoster}
-                        onMouseLeave={handleLeavePoster}
-                      >
+                      <div className={styles.posterContainer}>
                         <img
                           src={
                             el.poster_path !== null
@@ -164,7 +172,11 @@ const Search = () => {
                           className={styles.poster}
                         />
 
-                        <div className={styles.info} ref={infoRef}>
+                        <div
+                          className={styles.info}
+                          onMouseEnter={handleEnterPoster}
+                          onMouseLeave={handleLeavePoster}
+                        >
                           <p>{el.title}</p>
                           <p>
                             {new Date(el.release_date).getFullYear() || "N/A"}
@@ -179,11 +191,7 @@ const Search = () => {
                       badgeContent={Math.round(el.vote_average * 10) / 10}
                       color={el.vote_average > 7 ? "secondary" : "primary"}
                     >
-                      <div
-                        className={styles.posterContainer}
-                        onMouseEnter={handleEnterPoster}
-                        onMouseLeave={handleLeavePoster}
-                      >
+                      <div className={styles.posterContainer}>
                         <img
                           src={
                             el.poster_path !== null
@@ -194,7 +202,11 @@ const Search = () => {
                           className={styles.poster}
                         />
 
-                        <div className={styles.info} ref={infoRef}>
+                        <div
+                          className={styles.info}
+                          onMouseEnter={handleEnterPoster}
+                          onMouseLeave={handleLeavePoster}
+                        >
                           <p>{el.name}</p>
                           <p>
                             {new Date(el.first_air_date).getFullYear() || "N/A"}
@@ -214,6 +226,12 @@ const Search = () => {
       {result.results && (
         <div className={styles.pageDiv}>
           {result.page !== 1 ? (
+            <RiArrowLeftDoubleFill
+              onClick={handleToFirstPage}
+              className={styles.firstPageBtn}
+            />
+          ) : null}
+          {result.page !== 1 ? (
             <GrFormPrevious
               onClick={handlePrevPage}
               className={styles.prevBtn}
@@ -227,6 +245,12 @@ const Search = () => {
 
           {result.total_pages !== result.page ? (
             <GrFormNext onClick={handleNextPage} className={styles.nextBtn} />
+          ) : null}
+          {result.total_pages !== result.page ? (
+            <RiArrowRightDoubleFill
+              onClick={handleToLastPage}
+              className={styles.lastPageBtn}
+            />
           ) : null}
         </div>
       )}
